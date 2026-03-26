@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useEffect } from 'react';
@@ -74,7 +75,7 @@ export default function Stories() {
                     <div className="d-flex align-items-center mt-auto border-top pt-4">
                       <div className="flex-grow-1">
                         <div className="d-flex justify-content-between align-items-center">
-                          <h6 className="fw-bold mb-0 text-dark">{item.name}</h6>
+                          <h6 className="fw-bold mb-0 text-dark" style={{ fontSize: '18px' }}>{item.name}</h6>
                           <span className="extra-small text-muted">{item.date}</span>
                         </div>
                       </div>
@@ -97,12 +98,12 @@ export default function Stories() {
                   Reach out to our specialist team for a confidential consultation.
                 </p>
                 <div className="d-flex flex-column flex-sm-row justify-content-center gap-4">
-                  <a href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">
+                  <Link href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">
                     View Care Plans <i className="bi bi-arrow-right ms-2"></i>
-                  </a>
-                  <a href="mailto:contact@mindhaven.com" className="btn btn-premium btn-premium-outline px-5 py-3">
+                  </Link>
+                  <Link href="/contact" className="btn btn-premium btn-premium-outline px-5 py-3">
                     Contact Admissions
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

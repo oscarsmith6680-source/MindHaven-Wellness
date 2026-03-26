@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
@@ -88,7 +89,7 @@ export default function DepressionCare() {
                                 <i className={`bi ${item.icon} fs-4 text-primary`}></i>
                             </div>
                             <div>
-                                <h5 className="fw-bold mb-1 text-secondary">{item.title}</h5>
+                                <h5 className="fw-bold mb-1 text-secondary" style={{ fontSize: '22px' }}>{item.title}</h5>
                                 <p className="text-muted small mb-0">{item.desc}</p>
                             </div>
                         </div>
@@ -129,7 +130,7 @@ export default function DepressionCare() {
                         <div key={idx} className="col-lg-3 col-md-6">
                             <div className="p-5 bg-white rounded-5 shadow-sm border border-transparent transition-all hover-up h-100 text-center">
                                 <div className="text-primary fs-1 mb-4"><i className={`bi ${module.icon}`}></i></div>
-                                <h5 className="fw-bold mb-3 text-secondary">{module.title}</h5>
+                                <h5 className="fw-bold mb-3 text-secondary" style={{ fontSize: '22px' }}>{module.title}</h5>
                                 <p className="text-muted small mb-0 lh-lg">{module.desc}</p>
                             </div>
                         </div>
@@ -151,7 +152,7 @@ export default function DepressionCare() {
                             </p>
                         </div>
                         <div className="col-lg-5 text-lg-end mt-5 mt-lg-0">
-                            <a href="/contact" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Begin New Intake</a>
+                            <Link href="/contact" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Begin New Intake</Link>
                         </div>
                     </div>
                     {/* Background Glow */}

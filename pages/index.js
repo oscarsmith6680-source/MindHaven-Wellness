@@ -117,7 +117,7 @@ export default function Home() {
               Our expert clinicians provide the sanctuary you need to heal and thrive.
             </p>
             <div className="d-flex justify-content-center gap-3 reveal active" style={{ transitionDelay: '0.4s' }}>
-              <a href="#book-now" className="btn btn-premium btn-premium-primary px-5">Start Your Journey</a>
+              <Link href="/contact" className="btn btn-premium btn-premium-primary px-5">Start Your Journey</Link>
               <a href="#services" className="btn btn-premium btn-premium-outline px-5">Explore Care</a>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
                     <div className="mb-4 bg-light rounded-4 d-inline-flex align-items-center justify-content-center" style={{ width: '70px', height: '70px' }}>
                         <i className={`bi ${item.icon} fs-2 text-primary`}></i>
                     </div>
-                    <h4 className="fw-bold mb-3">{item.title}</h4>
+                    <h4 className="fw-bold mb-3" style={{ fontSize: '25px' }}>{item.title}</h4>
                     <p className="text-muted mb-0">{item.desc}</p>
                   </div>
                 </div>
@@ -240,15 +240,15 @@ export default function Home() {
                 </p>
                 <div className="row g-4 mb-5">
                   <div className="col-sm-6">
-                    <h5 className="fw-bold mb-2">Neuro-Informed</h5>
+                    <h5 className="fw-bold mb-2" style={{ fontSize: '25px' }}>Neuro-Informed</h5>
                     <p className="small text-muted mb-0">Evidence-based clinical treatments.</p>
                   </div>
                   <div className="col-sm-6">
-                    <h5 className="fw-bold mb-2">Elite Privacy</h5>
+                    <h5 className="fw-bold mb-2" style={{ fontSize: '25px' }}>Elite Privacy</h5>
                     <p className="small text-muted mb-0">Unmatched confidentiality protocols.</p>
                   </div>
                 </div>
-                <button className="btn btn-premium btn-premium-dark">Discover Our Method</button>
+                <Link href="/about" className="btn btn-premium btn-premium-dark">Discover Our Method</Link>
               </div>
             </div>
           </div>
@@ -260,10 +260,10 @@ export default function Home() {
             <div className="row align-items-end mb-5">
               <div className="col-lg-7">
                 <h6 className="text-white text-uppercase tracking-widest opacity-50 mb-3" style={{ fontSize: '0.75rem', fontWeight: 700 }}>Real Stories</h6>
-                <h2 className="display-4 text-white fw-bold">Voices of Transformation</h2>
+                <h2 className="display-4 text-white fw-bold" style={{ fontSize: '26px' }}>Voices of Transformation</h2>
               </div>
               <div className="col-lg-5 text-lg-end mt-4 mt-lg-0">
-                <button className="btn-premium btn-premium-outline">Read All Stories</button>
+                <Link href="/stories" className="btn-premium btn-premium-outline text-decoration-none">Read All Stories</Link>
               </div>
             </div>
             
@@ -281,7 +281,7 @@ export default function Home() {
                     <p className="fs-5 mb-5 lh-base" style={{ color: 'var(--text-main)', fontStyle: 'italic', fontWeight: 500 }}>"{t.text}"</p>
                     <div className="d-flex align-items-center mt-auto">
                       <div className="flex-grow-1">
-                        <h6 className="mb-0 fw-bold" style={{ color: 'var(--secondary-color)' }}>{t.name}</h6>
+                        <h6 className="mb-0 fw-bold" style={{ color: 'var(--secondary-color)', fontSize: '18px' }}>{t.name}</h6>
                       </div>
                     </div>
                   </div>
@@ -297,7 +297,7 @@ export default function Home() {
             <div className="row justify-content-center mb-5">
               <div className="col-lg-8 text-center">
                 <h6 className="text-uppercase tracking-widest text-primary mb-3" style={{ fontSize: '0.75rem', fontWeight: 700 }}>Investment</h6>
-                <h2 className="display-5 mb-4 fw-bold">Transparent Care Plans</h2>
+                <h2 className="display-5 mb-4 fw-bold" style={{ fontSize: '35px' }}>Transparent Care Plans</h2>
                 <p className="text-muted">High-standard mental health care tailored to your needs.</p>
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function Home() {
                 <div key={idx} className="col-lg-4 col-md-6 reveal" style={{ transitionDelay: `${idx * 0.1}s` }}>
                   <div className={`pricing-card ${plan.featured ? 'featured' : ''}`}>
                     {plan.featured && <div className="pricing-badge">Most Preferred</div>}
-                    <h4 className="fw-bold mb-3">{plan.name}</h4>
+                    <h4 className="fw-bold mb-3" style={{ fontSize: '25px' }}>{plan.name}</h4>
                     <p className="text-muted small mb-4">{plan.desc}</p>
                     <div className="price-value mb-5">
                       <span className="price-currency">$</span>{plan.price}<span className="price-period">/session</span>
@@ -342,9 +342,9 @@ export default function Home() {
                       ))}
                     </ul>
                     
-                    <button className={`btn-premium w-100 py-3 ${plan.featured ? 'btn-premium-primary' : 'btn-premium-dark'}`}>
+                    <Link href="/pricing" className={`btn-premium w-100 py-3 text-decoration-none ${plan.featured ? 'btn-premium-primary' : 'btn-premium-dark'}`}>
                       Select Plan
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -390,15 +390,15 @@ export default function Home() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section id="book-now" className="section-padding bg-dark text-white text-center">
+        <section id="book-now" className="section-padding bg-dark text-white text-center" style={{ background: 'var(--secondary-color) !important' }}>
           <div className="container">
             <div className="reveal">
-              <h2 className="display-5 text-white mb-4 fw-bold">Begin Your Evolution</h2>
-              <p className="lead mb-5 opacity-75 fw-medium">
+              <h2 className="display-3 fw-bold mb-4" style={{ fontFamily: 'Work Sans', letterSpacing: '-2px', color: 'white' }}>Begin Your Evolution</h2>
+              <p className="lead mb-5 opacity-75 mx-auto fs-4" style={{ maxWidth: '650px', lineHeight: 1.6 }}>
                 Limited spaces available for personalized care. 
-                Contact our intake team today.
+                Contact our intake team today for a private and confidential consultation.
               </p>
-              <button className="btn btn-premium btn-premium-primary px-5 py-3">Consult with a Specialist</button>
+              <Link href="/contact" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Consult with a Specialist</Link>
             </div>
           </div>
         </section>

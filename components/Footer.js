@@ -29,23 +29,11 @@ const Footer = () => {
               <h3 className="fw-bold tracking-tight mb-0" style={{ color: 'var(--secondary-color)', fontFamily: 'Work Sans' }}>MindHaven</h3>
               <div className="bg-primary mt-1" style={{ width: '30px', height: '2px' }}></div>
             </div>
-            <p className="text-muted mb-5 pe-lg-5" style={{ lineHeight: '1.8', fontSize: '0.95rem' }}>
+            <p className="text-muted mb-0 pe-lg-5" style={{ lineHeight: '1.8', fontSize: '0.95rem' }}>
               A premier clinical sanctuary designed for those who value depth, 
               absolute privacy, and excellence in mental health care. We provide 
               bespoke pathways to sustainable peace and cognitive freedom.
             </p>
-            <div className="d-flex gap-3">
-              {[
-                { icon: 'bi-instagram', href: '#' },
-                { icon: 'bi-linkedin', href: '#' },
-                { icon: 'bi-twitter-x', href: '#' },
-                { icon: 'bi-facebook', href: '#' }
-              ].map((social, idx) => (
-                <a key={idx} href={social.href} className="social-link-circle shadow-sm">
-                  <i className={`bi ${social.icon}`}></i>
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Navigation */}
@@ -127,23 +115,6 @@ const Footer = () => {
         .footer-link:hover {
           color: var(--primary-color) !important;
           transform: translateX(5px);
-        }
-        .social-link-circle {
-          width: 40px;
-          height: 40px;
-          background: white;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--secondary-color);
-          text-decoration: none;
-          transition: all 0.3s ease;
-        }
-        .social-link-circle:hover {
-          background: var(--primary-color);
-          color: white;
-          transform: translateY(-3px);
         }
         .hover-underline:hover {
           text-decoration: underline !important;

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
@@ -121,8 +122,8 @@ export default function About() {
                     </div>
                 </div>
                 <div className="d-flex flex-wrap gap-3">
-                    <a href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Our Programs</a>
-                    <a href="mailto:contact@mindhaven.com" className="btn btn-premium btn-premium-outline px-5 py-3" style={{ color: 'var(--secondary-color) !important', borderColor: 'var(--secondary-color) !important' }}>Admissions</a>
+                    <Link href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Our Programs</Link>
+                    <Link href="/contact" className="btn btn-premium btn-premium-outline px-5 py-3" style={{ color: 'var(--secondary-color) !important', borderColor: 'var(--secondary-color) !important' }}>Admissions</Link>
                 </div>
               </div>
             </div>
@@ -140,7 +141,7 @@ export default function About() {
                             Our elite medical team provides the most advanced psychological 
                             care available, in an environment that honors your privacy.
                         </p>
-                        <a href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3">Explore Elite Services</a>
+                        <Link href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3">Explore Elite Services</Link>
                     </div>
                     <div className="col-lg-6 text-center">
                         <div className="position-relative d-inline-block">
@@ -175,7 +176,7 @@ export default function About() {
                                 <div className="rounded-5 overflow-hidden mb-4 position-relative z-1" style={{ height: '350px' }}>
                                     <img src={member.img} alt={member.name} className="w-100 h-100 object-fit-cover transition-all" />
                                 </div>
-                                <h4 className="fw-bold mb-1" style={{ fontFamily: 'Work Sans' }}>{member.name}</h4>
+                                <h4 className="fw-bold mb-1" style={{ fontFamily: 'Work Sans', fontSize: '22px' }}>{member.name}</h4>
                                 <p className="text-primary small fw-bold text-uppercase tracking-widest mb-0">{member.role}</p>
                             </div>
                         </div>
@@ -220,12 +221,12 @@ export default function About() {
             <div className="container py-0">
                 <div className="row align-items-center g-0">
                     <div className="col-lg-7 py-5 pe-lg-5 text-white">
-                        <h2 className="display-3 fw-bold mb-4" style={{ fontFamily: 'Work Sans' }}>Begin Your Journey to <span className="text-primary">Sustainable</span> Peace.</h2>
-                        <p className="lead opacity-75 mb-5">
+                        <h2 className="display-3 fw-bold mb-4 text-white" style={{ fontFamily: 'Work Sans' }}>Begin Your Journey to <span className="text-primary">Sustainable</span> Peace.</h2>
+                        <p className="lead opacity-75 mb-5 text-white">
                             Take the first step toward clinical excellence and private recovery. 
                             Our team is ready to welcome you to the sanctuary.
                         </p>
-                        <a href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Our Care Plans</a>
+                        <Link href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">Our Care Plans</Link>
                     </div>
                     <div className="col-lg-5 d-none d-lg-block">
                         <div style={{ height: '600px' }}>

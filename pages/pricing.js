@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useEffect } from 'react';
@@ -88,7 +89,7 @@ export default function Pricing() {
                             <span className="badge bg-primary rounded-pill px-4 py-2 shadow-sm" style={{ fontSize: '0.75rem', letterSpacing: '1px' }}>RECOMMENDED</span>
                         </div>
                     )}
-                    <h3 className="fw-bold mb-3" style={{ fontFamily: 'Work Sans' }}>{plan.name}</h3>
+                    <h3 className="fw-bold mb-3" style={{ fontFamily: 'Work Sans', fontSize: '25px' }}>{plan.name}</h3>
                     <p className="text-muted small mb-5 lh-base" style={{ minHeight: '50px' }}>{plan.desc}</p>
                     
                     <div className="d-flex align-items-baseline mb-5">
@@ -108,9 +109,9 @@ export default function Pricing() {
                         </ul>
                     </div>
                     
-                    <button className={`btn-premium w-100 py-3 ${plan.featured ? 'btn-premium-primary' : 'btn-premium-dark'}`}>
+                    <Link href="/contact" className={`btn-premium w-100 py-3 text-decoration-none ${plan.featured ? 'btn-premium-primary' : 'btn-premium-dark'}`}>
                       Begin Intake
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -129,12 +130,12 @@ export default function Pricing() {
                   specialist team today for a private and confidential consultation.
                 </p>
                 <div className="d-flex flex-column flex-sm-row justify-content-center gap-4">
-                  <a href="/contact" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">
+                  <Link href="/contact" className="btn btn-premium btn-premium-primary px-5 py-3 shadow-lg">
                     Book Your Intake <i className="bi bi-arrow-right ms-2"></i>
-                  </a>
-                  <a href="mailto:contact@mindhaven.com" className="btn btn-premium btn-premium-outline px-5 py-3">
+                  </Link>
+                  <Link href="/contact" className="btn btn-premium btn-premium-outline px-5 py-3">
                     Contact Admissions
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

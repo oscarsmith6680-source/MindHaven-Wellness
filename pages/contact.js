@@ -140,38 +140,40 @@ export default function Contact() {
               <div className="container">
                 <div className="row g-4">
                   <div className="col-lg-4">
-                    <div className="contact-card p-5 h-100 rounded-5 transition-all shadow-hover border border-light bg-white d-flex flex-column">
-                      <div className="contact-icon-wrapper mb-4">
+                    <div className="contact-card p-5 h-100 rounded-5 transition-all shadow-hover border border-light bg-white d-flex flex-column position-relative overflow-hidden">
+                      <div className="card-bg-glow"></div>
+                      <div className="contact-icon-wrapper mb-4 position-relative z-1">
                         <i className="bi bi-geo-alt fs-2 text-primary"></i>
                       </div>
-                      <h5 className="fw-bold mb-3" style={{ color: 'var(--secondary-color)' }}>Clinical Sanctuary</h5>
-                      <p className="text-muted small lh-lg mb-0">
+                      <h5 className="fw-bold mb-3 position-relative z-1" style={{ color: 'var(--secondary-color)', fontSize: '20px' }}>Clinical Sanctuary</h5>
+                      <p className="text-muted small lh-lg mb-0 position-relative z-1">
                         Elite Hills, Clinical Drive,<br />
                         New York, NY 10022<br />
-                        <span className="text-primary fw-bold extra-small tracking-widest mt-2 d-inline-block cursor-pointer">VIEW ON MAP</span>
+                        <span className="text-primary fw-bold extra-small tracking-widest mt-3 d-inline-block cursor-pointer hover-link">VIEW ON MAP <i className="bi bi-arrow-up-right ms-1"></i></span>
                       </p>
                     </div>
                   </div>
                   <div className="col-lg-4">
-                    <div className="contact-card p-5 h-100 rounded-5 transition-all shadow-hover border border-light bg-white d-flex flex-column">
-                      <div className="contact-icon-wrapper mb-4">
+                    <div className="contact-card p-5 h-100 rounded-5 transition-all shadow-hover border border-light bg-white d-flex flex-column position-relative overflow-hidden">
+                      <div className="card-bg-glow"></div>
+                      <div className="contact-icon-wrapper mb-4 position-relative z-1">
                         <i className="bi bi-shield-lock fs-2 text-primary"></i>
                       </div>
-                      <h5 className="fw-bold mb-3" style={{ color: 'var(--secondary-color)' }}>Confidential Admissions</h5>
-                      <p className="text-muted small lh-lg mb-0">
+                      <h5 className="fw-bold mb-3 position-relative z-1" style={{ color: 'var(--secondary-color)', fontSize: '20px' }}>Confidential Admissions</h5>
+                      <p className="text-muted small lh-lg mb-0 position-relative z-1">
                         admissions@mindhaven.com<br />
                         +1 (800) 555-ELITE<br />
-                        <span className="text-primary fw-bold extra-small tracking-widest mt-2 d-inline-block">24/7 PRIORITY LINE</span>
+                        <span className="text-primary fw-bold extra-small tracking-widest mt-3 d-inline-block">24/7 PRIORITY LINE <i className="bi bi-dot ms-1 text-success"></i></span>
                       </p>
                     </div>
                   </div>
                   <div className="col-lg-4">
-                    <div className="contact-card p-5 h-100 rounded-5 transition-all shadow-hover border border-light bg-white d-flex flex-column" style={{ background: 'var(--accent-color) !important' }}>
-                      <div className="contact-icon-wrapper mb-4" style={{ background: 'rgba(255,255,255,0.5)' }}>
-                        <i className="bi bi-chat-quote fs-2 text-secondary"></i>
+                    <div className="contact-card p-5 h-100 rounded-5 transition-all shadow-hover border-none d-flex flex-column position-relative overflow-hidden" style={{ background: 'var(--secondary-color) !important' }}>
+                      <div className="contact-icon-wrapper mb-4 bg-white bg-opacity-10 position-relative z-1">
+                        <i className="bi bi-chat-quote fs-2 text-white"></i>
                       </div>
-                      <h5 className="fw-bold mb-3 text-secondary">Initial Consultation</h5>
-                      <p className="text-secondary opacity-75 small lh-lg mb-0">
+                      <h5 className="fw-bold mb-3 text-white position-relative z-1" style={{ fontSize: '20px' }}>Initial Consultation</h5>
+                      <p className="text-white opacity-75 small lh-lg mb-0 position-relative z-1">
                         Arranging your first intake session is a seamless process. Our concierge team responds to all inquiries within 4 business hours.
                       </p>
                     </div>
@@ -197,7 +199,7 @@ export default function Contact() {
                       <div className="row g-5 align-items-center">
                         <div className="col-lg-5">
                           <div className="pe-lg-4">
-                            <h2 className="display-5 fw-bold mb-4" style={{ fontFamily: 'Work Sans', color: 'var(--secondary-color)' }}>
+                            <h2 className="fw-bold mb-4" style={{ fontFamily: 'Work Sans', color: 'var(--secondary-color)', fontSize: '28px' }}>
                               Ready to find <span className="text-primary italic-font">your</span> peace?
                             </h2>
                             <p className="text-muted mb-5 lh-lg">
@@ -318,21 +320,47 @@ export default function Contact() {
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: var(--transition);
+          transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
         .contact-card:hover .contact-icon-wrapper {
           background: var(--primary-color);
+          transform: rotate(10deg) scale(1.1);
         }
         .contact-card:hover .contact-icon-wrapper i {
           color: white !important;
         }
+        .card-bg-glow {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 200px;
+          height: 200px;
+          background: radial-gradient(circle at 100% 0%, var(--primary-color), transparent 70%);
+          opacity: 0;
+          transition: all 0.6s ease;
+          pointer-events: none;
+        }
+        .contact-card:hover .card-bg-glow {
+          opacity: 0.08;
+          transform: scale(1.2);
+        }
+        .hover-link {
+          transition: all 0.3s ease;
+        }
+        .hover-link:hover {
+          letter-spacing: 0.15em !important;
+          color: var(--secondary-color) !important;
+        }
         .shadow-hover {
-          transition: all 0.4s ease;
+          transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
         .shadow-hover:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 30px 60px rgba(27, 77, 75, 0.05) !important;
+          transform: translateY(-15px);
+          box-shadow: 0 40px 80px rgba(27, 77, 75, 0.1) !important;
           border-color: var(--primary-color) !important;
+        }
+        .border-none {
+          border: none !important;
         }
         .shadow-form {
           box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.08);
