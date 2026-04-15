@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -55,13 +57,15 @@ export default function Contact() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    if (submitError) setSubmitError('');
     // Real-time validation
     validateField(name, value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setSubmitError('');
+
     // Final validation check for all fields
     const newErrors = {};
     let isValid = true;
@@ -81,10 +85,32 @@ export default function Contact() {
 
     setErrors(newErrors);
 
-    if (isValid) {
-      // Proceed with submit logic
+    if (!isValid) return;
+
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          carePathway: formData.pathway.trim(),
+          message: formData.message.trim(),
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) {
+        setSubmitError(data.error || 'Could not send your message. Please try again.');
+        return;
+      }
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      setSubmitError('Network error. Check your connection and try again.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -114,6 +140,7 @@ export default function Contact() {
                 </p>
                 <button onClick={() => {
                   setSubmitted(false);
+                  setSubmitError('');
                   setFormData({ name: '', email: '', phone: '', pathway: '', message: '' });
                   setErrors({});
                 }} className="btn btn-premium btn-premium-outline mt-5 px-5">Back to Form</button>
@@ -288,8 +315,28 @@ export default function Contact() {
                                 ></textarea>
                                 {errors.message && <div className="invalid-feedback ms-2">{errors.message}</div>}
                               </div>
+                              {submitError && (
+                                <div className="col-12">
+                                  <div className="alert alert-danger mb-0 py-3 rounded-4 small" role="alert">
+                                    {submitError}
+                                  </div>
+                                </div>
+                              )}
                               <div className="col-12 pt-3">
-                                <button type="submit" className="btn btn-premium btn-premium-primary w-100 py-3 shadow-lg">Submit Secure Request</button>
+                                <button
+                                  type="submit"
+                                  className="btn btn-premium btn-premium-primary w-100 py-3 shadow-lg"
+                                  disabled={submitting}
+                                >
+                                  {submitting ? (
+                                    <>
+                                      <span className="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+                                      Sending…
+                                    </>
+                                  ) : (
+                                    'Submit Secure Request'
+                                  )}
+                                </button>
                               </div>
                             </form>
                           </div>
