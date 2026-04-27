@@ -28,6 +28,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Prevent full-page horizontal shift; main content uses one gutter system on small screens */
+main,
+.premium-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Work Sans', sans-serif;
     font-weight: 700;
@@ -98,6 +106,19 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     }
 }
 
+/* Uniform horizontal rhythm on tablet & mobile (avoids lopsided gutters / “extra” right gap) */
+@media (max-width: 991.98px) {
+    :root {
+        --page-gutter: clamp(0.875rem, 3.6vw, 1.5rem);
+    }
+
+    main .container,
+    .footer .container {
+        padding-left: var(--page-gutter) !important;
+        padding-right: var(--page-gutter) !important;
+    }
+}
+
 .hero-padding-top {
     padding-top: 180px;
 }
@@ -111,6 +132,86 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
 @media (max-width: 768px) {
     .hero-padding-top {
         padding-top: 120px;
+    }
+}
+
+/* Clinical condition (Services) pages: no extra gap under the hero — top spacing stays from .hero-padding-top or inline */
+.service-page-hero {
+    padding-bottom: 0 !important;
+}
+
+/* About page: “Clinical Excellence” split — do not clip the Certified Sanctuary card (section had overflow: hidden) */
+.about-clinical-split,
+.about-clinical-image-wrap {
+    overflow: visible;
+}
+
+.about-certified-sanctuary {
+    z-index: 2;
+}
+
+/* Policy / legal pages — typography aligned with site (Raleway body, Work Sans headings) */
+.policy-content h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.policy-content h2:first-child,
+.policy-content > h2:first-of-type {
+    margin-top: 0;
+}
+
+.policy-content h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+}
+
+.policy-content p,
+.policy-content li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.policy-content p {
+    margin-bottom: 1.1rem;
+}
+
+.policy-content a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.policy-content a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.policy-content ul,
+.policy-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+.policy-content li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .policy-content h2 {
+        margin-top: 1.75rem;
     }
 }
 
@@ -155,18 +256,17 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     z-index: 1000;
 }
 
-@media (max-width: 991px) {
-    .navbar {
-        padding: 15px 0;
+/* Mobile & tablet: top bar stays light; collapsible menu uses dark panel + light links (see block after .scrolled) */
+@media (max-width: 991.98px) {
+    .navbar,
+    .navbar.scrolled {
         background: var(--white) !important;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        backdrop-filter: none !important;
+        padding: 15px 0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06) !important;
     }
     .navbar .navbar-brand {
         color: var(--secondary-color) !important;
-    }
-    .navbar .nav-link {
-        color: var(--text-main) !important;
-        padding: 10px 0 !important;
     }
     .navbar-toggler {
         border: none !important;
@@ -200,6 +300,49 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     transition: var(--transition);
 }
 
+/* Services control must match <Link> nav links in every state (button defaults to 400 weight) */
+.navbar .services-dropdown-toggle {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700 !important;
+    font-size: 0.95rem;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Keep “Services” + caret (::after) as one left-aligned group — no space-between, no full-width flex gap */
+.navbar .nav-item.dropdown .services-dropdown-toggle {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    white-space: nowrap;
+    width: auto;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Caret: sits right after label (keep Bootstrap’s triangle) */
+.navbar .nav-item.dropdown .services-dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.3em;
+    margin-right: 0;
+    flex-shrink: 0;
+    align-self: center;
+    border-top-color: currentColor;
+    transition: transform 0.2s ease;
+}
+
+.navbar .nav-item.dropdown .services-dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
 .navbar .nav-link:hover {
     color: var(--white) !important;
     transform: translateY(-1px);
@@ -225,6 +368,81 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     color: var(--primary-color) !important;
 }
 
+.navbar.scrolled .services-dropdown-toggle {
+    font-weight: 700 !important;
+    font-size: 0.95rem;
+}
+
+.navbar.scrolled .nav-item.dropdown .services-dropdown-toggle::after {
+    border-top-color: currentColor;
+}
+
+/* Desktop: scrolled uses dark text on light glass (above). */
+/* Mobile / tablet: .scrolled must NOT turn links dark; open menu = dark panel + white links. */
+@media (max-width: 991.98px) {
+    .navbar .navbar-collapse {
+        background: var(--secondary-color);
+        border-radius: 0 0 20px 20px;
+        margin-top: 0.75rem;
+        padding: 1rem 1.25rem 1.5rem;
+    }
+
+    .navbar .nav-link,
+    .navbar.scrolled .nav-link,
+    .navbar .nav-link:hover,
+    .navbar.scrolled .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar.scrolled .nav-link:focus {
+        color: rgba(255, 255, 255, 0.95) !important;
+        padding: 10px 0 !important;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar.scrolled .nav-link:hover {
+        color: var(--white) !important;
+        opacity: 0.95;
+    }
+
+    .navbar .dropdown-toggle,
+    .navbar.scrolled .dropdown-toggle {
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .navbar .dropdown-toggle::after,
+    .navbar.scrolled .dropdown-toggle::after {
+        border-top-color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Scrollable main menu so the full Services list is never clipped */
+    .navbar .navbar-collapse.collapse.show,
+    .navbar .navbar-collapse.collapsing {
+        max-height: min(90vh, 800px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .navbar .services-dropdown-toggle,
+    .navbar.scrolled .services-dropdown-toggle {
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 700 !important;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* Full row tap target, but label + caret stay grouped to the left */
+    .navbar .nav-item.dropdown .services-dropdown-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar .nav-item.dropdown .services-dropdown-toggle::after {
+        border-top-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
 /* --- Mega Menu Design --- */
 @media (min-width: 992px) {
     .navbar > .container {
@@ -233,33 +451,19 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     .nav-item.dropdown {
         position: static !important;
     }
-}
 
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-@media (max-width: 991px) {
-    .nav-item.dropdown:hover .dropdown-menu {
-        transform: none;
+    .navbar .nav-item.dropdown .services-dropdown-toggle {
+        width: auto;
     }
-    .dropdown-menu {
-        display: none;
+}
+
+/* Desktop + laptop only: hover to open mega menu (do not use hover on ≤991px — breaks touch + Bootstrap .show toggle) */
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
         opacity: 1;
         visibility: visible;
-        position: static !important;
-        transform: none !important;
-        width: 100% !important;
-        border: none !important;
-        padding: 0 !important;
-        background: transparent !important;
-        box-shadow: none !important;
-    }
-    .dropdown-menu.show {
-        display: block;
+        transform: translateX(-50%) translateY(0);
     }
 }
 
@@ -282,19 +486,46 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     margin-top: 15px !important;
 }
 
-@media (max-width: 991px) {
-    .mega-menu {
-        width: 100%;
+/* Mobile / tablet: Services panel — max-height + opacity (no display:none) so open/close can animate */
+@media (max-width: 991.98px) {
+    .navbar .dropdown-menu.mega-menu {
         position: static !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        float: none;
+        border: 1px solid rgba(27, 77, 75, 0.06) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        box-shadow: none !important;
         transform: none !important;
-        padding: 15px !important;
+        display: block !important;
+        max-height: 0;
+        min-height: 0;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        opacity: 0;
+        overflow: hidden;
+        border-radius: 20px !important;
+        pointer-events: none;
+        visibility: hidden;
+        transition: max-height 0.44s cubic-bezier(0.33, 1, 0.32, 1), opacity 0.32s ease, padding 0.36s ease, margin 0.36s ease, visibility 0s linear 0.44s, border-color 0.2s ease;
+    }
+
+    .navbar .dropdown-menu.mega-menu.show {
+        max-height: min(1200px, 85vh);
         opacity: 1;
         visibility: visible;
-        display: none;
-        margin-top: 0 !important;
+        pointer-events: auto;
+        margin-top: 0.5rem !important;
+        padding: 15px !important;
+        transition: max-height 0.46s cubic-bezier(0.33, 1, 0.32, 1), opacity 0.34s ease 0.04s, padding 0.36s ease, margin 0.36s ease, visibility 0s linear 0s, border-color 0.2s ease;
     }
-    .mega-menu.show {
-        display: block;
+}
+
+@media (max-width: 991.98px) and (prefers-reduced-motion: reduce) {
+    .navbar .dropdown-menu.mega-menu,
+    .navbar .dropdown-menu.mega-menu.show {
+        transition: none;
     }
 }
 
@@ -432,7 +663,12 @@ h6, .display-6 { font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.4; }
     text-align: center;
     color: var(--white);
     max-width: 900px;
-    padding: 0 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(0.875rem, 3.6vw, 1.5rem);
+    padding-right: clamp(0.875rem, 3.6vw, 1.5rem);
+    box-sizing: border-box;
 }
 
 .hero-content h1 {

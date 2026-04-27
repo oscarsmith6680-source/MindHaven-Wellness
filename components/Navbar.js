@@ -1,9 +1,23 @@
 // MindHaven Wellness - Premium Navbar (Updated Visibility & Fonts)
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Image from "next/image";
+import { useState, useEffect, useLayoutEffect } from 'react';
+
+const COMPACT_QUERY = '(max-width: 991.98px)';
 
 const Navbar = ({ darkLinks = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCompactNav, setIsCompactNav] = useState(false);
+
+  // Mobile / tablet: lock logo to dark variant; desktop: white over hero, dark when scrolled or darkLinks
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mq = window.matchMedia(COMPACT_QUERY);
+    const update = () => setIsCompactNav(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,25 +32,57 @@ const Navbar = ({ darkLinks = false }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // When the main mobile menu closes, close the Services dropdown so state stays in sync
+  useEffect(() => {
+    if (!isCompactNav) return;
+    const collapseEl = document.getElementById('navbarNav');
+    if (!collapseEl) return;
+
+    const onMainMenuHidden = () => {
+      const btn = document.getElementById('servicesDropdown');
+      if (btn && btn.getAttribute('aria-expanded') === 'true') {
+        btn.click();
+      }
+    };
+
+    collapseEl.addEventListener('hidden.bs.collapse', onMainMenuHidden);
+    return () => collapseEl.removeEventListener('hidden.bs.collapse', onMainMenuHidden);
+  }, [isCompactNav]);
+
+  const useDarkLogo = isCompactNav || isScrolled || darkLinks;
+  // Toggler: light/white icon only on desktop, over hero, not scrolled, not darkLinks page
+  const togglerUseLightIcon = !isCompactNav && !isScrolled && !darkLinks;
+
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${isScrolled || darkLinks ? 'scrolled shadow-sm' : ''}`}>
+    <nav
+      className={`navbar navbar-expand-lg fixed-top ${isScrolled || darkLinks ? 'scrolled shadow-sm' : ''}`}
+    >
       <div className="container">
-        {/* Logo Section */}
+        {/* Logo: dark on mobile/tablet always; desktop follows hero / scroll */}
         <Link href="/" className="navbar-brand d-flex align-items-center">
-          <span className="fw-bold tracking-tight">MindHaven</span>
+          <Image
+            src={useDarkLogo ? '/images/dark-logo.png' : '/images/white-logo.png'}
+            alt="Logo"
+            width={140}
+            height={40}
+          />
         </Link>
 
-        {/* Toggle Button for Mobile - Custom style for visibility */}
-        <button 
-          className={`navbar-toggler border-0 shadow-none ${!isScrolled && !darkLinks ? 'navbar-dark' : ''}`} 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav" 
-          aria-controls="navbarNav" 
-          aria-expanded="false" 
+        <button
+          className={`navbar-toggler border-0 shadow-none ${togglerUseLightIcon ? 'navbar-dark' : ''}`}
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" style={{ filter: !isScrolled && !darkLinks ? 'invert(1) grayscale(100%) brightness(200%)' : 'none' }}></span>
+          <span
+            className="navbar-toggler-icon"
+            style={{
+              filter: togglerUseLightIcon ? 'invert(1) grayscale(100%) brightness(200%)' : 'none',
+            }}
+          />
         </button>
 
         {/* Navigation Links */}
@@ -52,18 +98,20 @@ const Navbar = ({ darkLinks = false }) => {
               <Link href="/pricing" className="nav-link px-3">Pricing Plan</Link>
             </li>
             
-            {/* Services Mega Menu */}
+            {/* Services Mega Menu — button avoids href="#"; Bootstrap toggles .show on the menu (mobile + desktop) */}
             <li className="nav-item dropdown">
-              <a 
-                className="nav-link dropdown-toggle px-3" 
-                href="#" 
-                id="servicesDropdown" 
-                role="button" 
-                data-bs-toggle="dropdown" 
+              <button
+                type="button"
+                className="nav-link dropdown-toggle px-3 services-dropdown-toggle border-0 bg-transparent"
+                id="servicesDropdown"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                data-bs-auto-close="true"
                 aria-expanded="false"
+                aria-haspopup="true"
               >
                 Services
-              </a>
+              </button>
               <div className="dropdown-menu mega-menu border-0" aria-labelledby="servicesDropdown">
                 <div className="mega-menu-grid">
                   {[

@@ -41,9 +41,9 @@ export default function DepressionCare() {
 
       <main>
         {/* --- SECTION 1: HERO --- */}
-        <section className="hero-padding-top reveal active" style={{ 
+        <section className="hero-padding-top service-page-hero reveal active" style={{ 
           background: 'linear-gradient(180deg, #f0f4f4 0%, var(--bg-color) 100%)',
-          paddingBottom: '100px'
+          paddingBottom: 0
         }}>
           <div className="container text-center">
             <h6 className="text-primary text-uppercase tracking-widest fw-bold mb-3" style={{ fontSize: '0.8rem' }}>Specialized Depression Care</h6>

@@ -295,12 +295,17 @@ export default function Contact() {
                                   value={formData.pathway}
                                   onChange={handleChange}
                                 >
-                                  <option value="">Select Pathway...</option>
-                                  <option value="anxiety">Anxiety Recovery</option>
-                                  <option value="depression">Depression Support</option>
-                                  <option value="adhd">Executive ADHD</option>
-                                  <option value="other">Other Service</option>
-                                </select>
+                             <option value="">Select Pathway...</option>
+                             <option value="Anxiety">Anxiety & Panic</option>
+                             <option value="depression">Depression Support</option>
+                             <option value="adhd">Executive ADHD</option>
+                             <option value="bipolar">Bipolar Disorder</option>
+                             <option value="Insomnia">Insomnia Therapy</option>
+                             <option value="ocd">OCD Management</option>
+                             <option value="ptsd">PTSD Recovery</option>
+                             <option value="psychotic">Psychotic Disorders</option>
+                             <option value="addiction">Addiction Recovery</option>
+                           </select>
                                 {errors.pathway && <div className="invalid-feedback ms-2">{errors.pathway}</div>}
                               </div>
                               <div className="col-12">

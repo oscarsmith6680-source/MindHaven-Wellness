@@ -42,8 +42,7 @@ export default function About() {
       <main>
         {/* --- SECTION 1: HERO (CENTERED INTRO + IMAGE) --- */}
         <section className="hero-padding-top reveal active" style={{ 
-          background: 'linear-gradient(180deg, #f0f4f4 0%, var(--bg-color) 100%)',
-          paddingBottom: '100px'
+          background: 'linear-gradient(180deg, #f0f4f4 0%, var(--bg-color) 100%)'
         }}>
           <div className="container text-center">
             <h6 className="text-primary text-uppercase tracking-widest fw-bold mb-3" style={{ fontSize: '0.8rem' }}>About Us</h6>
@@ -130,27 +129,55 @@ export default function About() {
           </div>
         </section>
 
-        {/* --- SECTION 4: SERVICES CTA (DIAGONAL / SPLIT) --- */}
-        <section className="reveal" style={{ position: 'relative', overflow: 'hidden', padding: '120px 0' }}>
-            <div className="position-absolute top-0 start-0 w-100 h-100 z-0" style={{ background: 'var(--secondary-color)', clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}></div>
-            <div className="container position-relative z-1 py-5">
+        {/* --- SECTION 4: SERVICES CTA (DIAGONAL / SPLIT) — overflow visible so image badge is not clipped */}
+        <section className="reveal about-clinical-split position-relative" style={{ padding: '120px 0' }}>
+            <div
+                className="position-absolute top-0 start-0 w-100 h-100 z-0"
+                style={{ background: 'var(--secondary-color)', clipPath: 'polygon(0 0, 100% 5%, 100% 100%, 0 95%)' }}
+                aria-hidden="true"
+            />
+            <div className="container position-relative z-1 py-5" style={{ overflow: 'visible' }}>
                 <div className="row align-items-center g-5">
                     <div className="col-lg-6 text-center text-lg-start">
                         <h2 className="display-4 fw-bold mb-4 text-white" style={{ fontFamily: 'Work Sans', textShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>Clinical Excellence for the Modern Achiever</h2>
                         <p className="fs-5 text-white opacity-75 mb-5">
-                            Our elite medical team provides the most advanced psychological 
+                            Our elite medical team provides the most advanced psychological
                             care available, in an environment that honors your privacy.
                         </p>
                         <Link href="/pricing" className="btn btn-premium btn-premium-primary px-5 py-3">Explore Elite Services</Link>
                     </div>
-                    <div className="col-lg-6 text-center">
-                        <div className="position-relative d-inline-block">
-                            <div className="rounded-5 overflow-hidden shadow-2xl border border-white border-4 mx-auto" style={{ maxWidth: '100%', width: '450px' }}>
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" alt="Clinic Interior" className="img-fluid w-100" />
+                    <div className="col-lg-6 text-center text-lg-end">
+                        {/* Parent: positioning context + visible overflow; image child clips corners only */}
+                        <div
+                            className="position-relative d-inline-block w-100 about-clinical-image-wrap mx-auto"
+                            style={{ maxWidth: '450px' }}
+                        >
+                            <div className="rounded-5 overflow-hidden shadow-2xl border border-white border-4 w-100 position-relative z-1" style={{ aspectRatio: '4/3' }}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+                                    alt="Clinic Interior"
+                                    className="w-100 h-100 d-block"
+                                    style={{ objectFit: 'cover' }}
+                                />
                             </div>
-                            <div className="position-absolute bottom-0 start-0 bg-white p-3 rounded-4 shadow-lg d-none d-md-block" style={{ transform: 'translate(-30%, 30%)' }}>
-                                <div className="text-primary fs-3 mb-1"><i className="bi bi-patch-check"></i></div>
-                                <div className="fw-bold text-secondary extra-small tracking-widest text-uppercase">Certified Sanctuary</div>
+                            {/* z-index above image; insets keep box inside frame (no negative translate) */}
+                            <div
+                                className="position-absolute about-certified-sanctuary"
+                                style={{
+                                    zIndex: 2,
+                                    left: '0.5rem',
+                                    right: 'auto',
+                                    bottom: '0.5rem',
+                                    top: 'auto',
+                                    maxWidth: 'calc(100% - 1rem)',
+                                }}
+                            >
+                                <div className="bg-white p-2 p-sm-3 rounded-3 shadow-lg text-start">
+                                    <div className="text-primary fs-3 mb-1">
+                                        <i className="bi bi-patch-check" aria-hidden="true" />
+                                    </div>
+                                    <div className="fw-bold text-secondary small text-uppercase" style={{ letterSpacing: '0.08em' }}>Certified Sanctuary</div>
+                                </div>
                             </div>
                         </div>
                     </div>

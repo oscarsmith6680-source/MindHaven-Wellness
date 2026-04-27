@@ -41,10 +41,10 @@ export default function BipolarDisorder() {
 
       <main>
         {/* --- SECTION 1: HERO --- */}
-        <section className="section-padding reveal active" style={{ 
+        <section className="section-padding service-page-hero reveal active" style={{ 
           background: 'linear-gradient(180deg, #f0f4f4 0%, var(--bg-color) 100%)',
           paddingTop: '180px',
-          paddingBottom: '100px'
+          paddingBottom: 0
         }}>
           <div className="container text-center">
             <h6 className="text-primary text-uppercase tracking-widest fw-bold mb-3" style={{ fontSize: '0.8rem' }}>Clinical Balance</h6>

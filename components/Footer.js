@@ -1,5 +1,6 @@
 // MindHaven Wellness - Premium Redesigned Footer Component
 import Link from 'next/link';
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,6 +20,12 @@ const Footer = () => {
     { name: 'Book Intake', href: '/contact' },
   ];
 
+  const policies = [
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Refund Policy', href: '/refund-policy' },
+    { name: 'Terms & Conditions', href: '/terms-conditions' },
+  ];
+
   return (
     <footer className="footer-premium pt-5 pb-3" style={{ background: '#f8faf9', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
       <div className="container pt-5">
@@ -26,8 +33,14 @@ const Footer = () => {
           {/* Brand & Description */}
           <div className="col-lg-4 col-md-12">
             <div className="footer-brand mb-4">
-              <h3 className="fw-bold tracking-tight mb-0" style={{ color: 'var(--secondary-color)', fontFamily: 'Work Sans' }}>MindHaven</h3>
-              <div className="bg-primary mt-1" style={{ width: '30px', height: '2px' }}></div>
+            <Link href="/">
+            <Image
+            src="/images/dark-logo.png"
+            alt="MindHaven Logo"
+            width={140}
+            height={40}
+            />
+            </Link>
             </div>
             <p className="text-muted mb-0 pe-lg-5" style={{ lineHeight: '1.8', fontSize: '0.95rem' }}>
               A premier clinical sanctuary designed for those who value depth, 
@@ -95,8 +108,23 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Legal & policies — same link styling as main footer links */}
+        <div className="row mt-1 mb-0">
+          <div className="col-12">
+            <ul className="list-unstyled d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 gap-lg-4 align-items-center mb-0">
+              {policies.map((item) => (
+                <li key={item.href} className="m-0">
+                  <Link href={item.href} className="footer-link text-decoration-none text-muted small">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
         {/* Bottom Credits */}
-        <div className="pt-5 mt-5 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div className="pt-4 pt-md-5 mt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
           <div className="text-muted extra-small" style={{ fontSize: '0.75rem' }}>
             &copy; {currentYear} MindHaven Wellness. All rights reserved. Professional clinical sanctuary.
           </div>
