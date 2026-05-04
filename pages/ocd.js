@@ -33,7 +33,7 @@ export default function OCDManagement() {
   return (
     <div className="premium-page">
       <Head>
-        <title>OCD Management | MindHaven Wellness - Precision Clinical Care</title>
+        <title>OCD Management | MindPureWellness - Precision Clinical Care</title>
         <meta name="description" content="Advanced clinical management for OCD. Break the cycle of repetitive thoughts and behaviors through specialized neuro-informed therapy." />
       </Head>
 

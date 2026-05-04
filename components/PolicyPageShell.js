@@ -27,7 +27,7 @@ export default function PolicyPageShell({ pageTitle, metaDescription, kicker, ch
   return (
     <div className="premium-page">
       <Head>
-        <title>{pageTitle} | MindHaven Wellness</title>
+        <title>{pageTitle} | MindPureWellness</title>
         <meta name="description" content={metaDescription} />
       </Head>
 

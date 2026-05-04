@@ -33,7 +33,7 @@ export default function BipolarDisorder() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Bipolar Disorder Care | MindHaven Wellness - Balanced Clinical Excellence</title>
+        <title>Bipolar Disorder Care | MindPureWellness - Balanced Clinical Excellence</title>
         <meta name="description" content="Specialized clinical care for Bipolar Disorder, focusing on stabilization, balance, and long-term vitality in a private setting." />
       </Head>
 

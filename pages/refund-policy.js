@@ -6,18 +6,18 @@ export default function RefundPolicy() {
     <PolicyPageShell
       pageTitle="Refund Policy"
       kicker="Legal"
-      metaDescription="MindHaven Wellness refund and cancellation terms for care plans and sessions."
+      metaDescription="MindPureWellness refund and cancellation terms for care plans and sessions."
     >
       <p>
         This Refund Policy explains how fees, credits, and refunds may be handled for services
-        offered by MindHaven Wellness. It applies in addition to any written agreement or
+        offered by MindPureWellness. It applies in addition to any written agreement or
         intake paperwork specific to your care plan.
       </p>
 
       <h2>Session-based services</h2>
       <p>
         Many of our services are provided on a per-session or per-program basis. Unless your
-        written agreement with MindHaven states otherwise, session fees are generally earned
+        written agreement with MindPureWellness states otherwise, session fees are generally earned
         at the time the session is provided or as scheduled under your plan.
       </p>
 
@@ -60,7 +60,7 @@ export default function RefundPolicy() {
       <p>
         To ask about a cancellation, credit, or refund, contact your care coordinator or reach
         us through our <Link href="/contact">Contact</Link> page or at{' '}
-        <a href="mailto:admissions@mindhaven.com">admissions@mindhaven.com</a>. Include your name,
+        <a href="mailto:admissions@mindpurewellness.com">admissions@mindpurewellness.com</a>. Include your name,
         the service or program in question, and a brief description of the request.
       </p>
 

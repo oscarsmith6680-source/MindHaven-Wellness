@@ -33,7 +33,7 @@ export default function ADHDSupport() {
   return (
     <div className="premium-page">
       <Head>
-        <title>ADHD Support | MindHaven Wellness - Executive Focus & Clarity</title>
+        <title>ADHD Support | MindPureWellness - Executive Focus & Clarity</title>
         <meta name="description" content="Specialized clinical strategies for ADHD, designed for high-performing individuals seeking focus and organizational excellence." />
       </Head>
 

@@ -33,7 +33,7 @@ export default function AddictionRecovery() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Addiction Recovery | MindHaven Wellness - Elite Private Sanctuary</title>
+        <title>Addiction Recovery | MindPureWellness - Elite Private Sanctuary</title>
         <meta name="description" content="Specialized Addiction Recovery for high-performing individuals. Private, clinical, and compassionate paths to freedom in a boutique sanctuary." />
       </Head>
 

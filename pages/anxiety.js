@@ -33,7 +33,7 @@ export default function AnxietyPanic() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Anxiety & Panic Care | MindHaven Wellness</title>
+        <title>Anxiety & Panic Care | MindPureWellness</title>
         <meta name="description" content="Specialized clinical care for anxiety and panic disorders in a private, boutique environment." />
       </Head>
 

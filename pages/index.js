@@ -1,4 +1,4 @@
-// MindHaven Wellness - Premium Home Page Redesign (Updated)
+// MindPureWellness - Premium Home Page Redesign (Updated)
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <div className="premium-page">
       <Head>
-        <title>MindHaven Wellness | Elite Mental Health Support</title>
+        <title>MindPureWellness | Elite Mental Health Support</title>
         <meta name="description" content="Professional, high-end mental wellness and therapy center." />
       </Head>
 
@@ -230,7 +230,7 @@ export default function Home() {
                 <h6 className="text-uppercase tracking-widest text-primary mb-3" style={{ fontSize: '0.75rem', fontWeight: 700 }}>The Haven</h6>
                 <h2 className="display-6 mb-4 fw-bold">Reimagining Mental Health</h2>
                 <p className="lead text-muted mb-4">
-                  MindHaven is a premier sanctuary designed for those 
+                  MindPureWellness is a premier sanctuary designed for those 
                   who value depth, privacy, and clinical excellence.
                 </p>
                 <p className="text-muted mb-5">
@@ -269,7 +269,7 @@ export default function Home() {
             
             <div className="row g-4">
               {[
-                { name: "S. Bennett", text: "Finding MindHaven was a turning point. The level of care and professional environment is unmatched by any clinic I've visited before.", rating: 5 },
+                { name: "S. Bennett", text: "Finding MindPureWellness was a turning point. The level of care and professional environment is unmatched by any clinic I've visited before.", rating: 5 },
                 { name: "M. Lawson", text: "The approach here isn't just clinical—it's human. I finally felt understood and had a clear path forward for my mental well-being.", rating: 5 },
                 { name: "D. Ross", text: "Truly life-changing. The integration of therapy and wellness techniques helped me regain control of my life and career.", rating: 5 }
               ].map((t, idx) => (

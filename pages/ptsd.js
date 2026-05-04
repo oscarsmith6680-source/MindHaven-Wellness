@@ -33,7 +33,7 @@ export default function PTSDRecovery() {
   return (
     <div className="premium-page">
       <Head>
-        <title>PTSD Recovery | MindHaven Wellness - Trauma-Informed Excellence</title>
+        <title>PTSD Recovery | MindPureWellness - Trauma-Informed Excellence</title>
         <meta name="description" content="Compassionate, clinical PTSD recovery. Heal from trauma in a safe, private, and neuro-informed boutique sanctuary." />
       </Head>
 

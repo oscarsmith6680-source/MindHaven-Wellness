@@ -33,8 +33,8 @@ export default function About() {
   return (
     <div className="premium-page">
       <Head>
-        <title>About Us | MindHaven Wellness - Premium Mental Health Care</title>
-        <meta name="description" content="Discover MindHaven Wellness: A premium sanctuary for mental health excellence and holistic recovery." />
+        <title>About Us | MindPureWellness - Premium Mental Health Care</title>
+        <meta name="description" content="Discover MindPureWellness: A premium sanctuary for mental health excellence and holistic recovery." />
       </Head>
 
       <Navbar darkLinks={true} />
@@ -58,7 +58,7 @@ export default function About() {
               <div className="service-hero-img-container shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1920" 
-                  alt="MindHaven Sanctuary" 
+                  alt="MindPureWellness Sanctuary" 
                   className="w-100 h-100 object-fit-cover hero-zoom"
                 />
               </div>
@@ -90,7 +90,7 @@ export default function About() {
                   Your Path to <span className="text-primary">Sustainable</span> Peace.
                 </h2>
                 <p className="text-muted fs-5 lh-lg mb-5">
-                  MindHaven Wellness isn't just a clinic; it's a sanctuary for high-performing individuals 
+                  MindPureWellness isn't just a clinic; it's a sanctuary for high-performing individuals 
                   seeking absolute discretion and clinical excellence. We tailor every program to 
                   your unique biological and psychological landscape.
                 </p>
@@ -222,7 +222,7 @@ export default function About() {
                     <div className="col-lg-8">
                         <div className="accordion-custom d-flex flex-column gap-3">
                             {[
-                                { q: "Is my treatment entirely private?", a: "Yes, MindHaven Wellness is designed for total discretion. We use secure systems and provide separate entrances for elite clinical sessions." },
+                                { q: "Is my treatment entirely private?", a: "Yes, MindPureWellness is designed for total discretion. We use secure systems and provide separate entrances for elite clinical sessions." },
                                 { q: "What approach do you take for anxiety?", a: "We use a neuro-informed approach, combining traditional CBT with biometric data and advanced grounding techniques to provide rapid and sustainable relief." },
                                 { q: "Do you offer remote sessions?", a: "While we prioritize in-person sanctuary sessions, we offer secure concierge tele-health for our established elite clients." },
                                 { q: "How do I begin the intake process?", a: "Simply fill out our confidential intake form or call our private concierge. We will respond within 4 business hours to arrange a consultation." }

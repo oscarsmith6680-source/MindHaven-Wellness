@@ -25,19 +25,19 @@ export default function Stories() {
   }, []);
 
   const reviews = [
-    { name: "Sarah M.", role: "Executive", text: "Finding MindHaven was a turning point. The level of care and professional environment is unmatched by any clinic I've visited before.", rating: 5, date: "March 2026" },
+    { name: "Sarah M.", role: "Executive", text: "Finding MindPureWellness was a turning point. The level of care and professional environment is unmatched by any clinic I've visited before.", rating: 5, date: "March 2026" },
     { name: "James R.", role: "Entrepreneur", text: "The neuro-informed therapy was a game changer for my ADHD. I've never felt more in control of my life and career.", rating: 5, date: "February 2026" },
     { name: "Emily L.", role: "Creative Lead", text: "Truly life-changing. The integration of therapy and wellness techniques helped me regain my creative spark and inner peace.", rating: 5, date: "January 2026" },
     { name: "Michael B.", role: "Director", text: "A sanctuary in the truest sense. The staff is exceptional, and the privacy protocols give me total peace of mind.", rating: 5, date: "December 2025" },
-    { name: "Sophia K.", role: "Physician", text: "As a doctor myself, I appreciate the clinical depth and evidence-based approach MindHaven brings to every session.", rating: 5, date: "November 2025" },
-    { name: "David T.", role: "Professional Athlete", text: "Mental performance is as important as physical. MindHaven has become an essential part of my performance toolkit.", rating: 5, date: "October 2025" }
+    { name: "Sophia K.", role: "Physician", text: "As a doctor myself, I appreciate the clinical depth and evidence-based approach MindPureWellness brings to every session.", rating: 5, date: "November 2025" },
+    { name: "David T.", role: "Professional Athlete", text: "Mental performance is as important as physical. MindPureWellness has become an essential part of my performance toolkit.", rating: 5, date: "October 2025" }
   ];
 
   return (
     <div className="premium-page">
       <Head>
-        <title>Client Stories | MindHaven Wellness</title>
-        <meta name="description" content="Read transformative stories from our clients at MindHaven Wellness." />
+        <title>Client Stories | MindPureWellness</title>
+        <meta name="description" content="Read transformative stories from our clients at MindPureWellness." />
       </Head>
 
       <Navbar darkLinks={true} />
@@ -55,7 +55,7 @@ export default function Stories() {
               Voices of <span className="text-primary">Transformation</span> and Hope.
             </h1>
             <p className="fs-5 text-muted mb-0 mx-auto" style={{ maxWidth: '650px' }}>
-              Real stories from individuals who found their sanctuary and path forward at MindHaven.
+              Real stories from individuals who found their sanctuary and path forward at MindPureWellness.
               Experience the journey of recovery through their words.
             </p>
           </div>

@@ -1,4 +1,4 @@
-// MindHaven Wellness - Premium Redesigned Footer Component
+// MindPureWellness - Premium Redesigned Footer Component
 import Link from 'next/link';
 import Image from "next/image";
 
@@ -36,7 +36,7 @@ const Footer = () => {
             <Link href="/">
             <Image
             src="/images/dark-logo.png"
-            alt="MindHaven Logo"
+            alt="MindPureWellness Logo"
             width={140}
             height={40}
             />
@@ -89,8 +89,8 @@ const Footer = () => {
               </div>
               <div className="d-flex align-items-center gap-3">
                 <div className="text-primary"><i className="bi bi-envelope"></i></div>
-                <Link href="mailto:admissions@mindhaven.com" className="text-muted small text-decoration-none footer-link">
-                  admissions@mindhaven.com
+                <Link href="mailto:admissions@mindpurewellness.com" className="text-muted small text-decoration-none footer-link">
+                  admissions@mindpurewellness.com
                 </Link>
               </div>
               <div className="d-flex align-items-center gap-3">
@@ -126,7 +126,7 @@ const Footer = () => {
         {/* Bottom Credits */}
         <div className="pt-4 pt-md-5 mt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
           <div className="text-muted extra-small" style={{ fontSize: '0.75rem' }}>
-            &copy; {currentYear} MindHaven Wellness. All rights reserved. Professional clinical sanctuary.
+            &copy; {currentYear} MindPureWellness. All rights reserved. Professional clinical sanctuary.
           </div>
           <div className="text-muted extra-small" style={{ fontSize: '0.75rem' }}>
             Developed by <a href="https://logix9.io/" target="_blank" rel="noopener noreferrer" className="text-primary fw-bold text-decoration-none hover-underline">Logix9</a>

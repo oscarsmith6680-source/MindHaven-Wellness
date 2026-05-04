@@ -33,7 +33,7 @@ export default function DepressionCare() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Depression Care | MindHaven Wellness - Boutique Clinical Sanctuary</title>
+        <title>Depression Care | MindPureWellness - Boutique Clinical Sanctuary</title>
         <meta name="description" content="Compassionate, evidence-based clinical care for depression in a private and luxurious environment." />
       </Head>
 
@@ -67,7 +67,7 @@ export default function DepressionCare() {
           </div>
         </section>
 
-        {/* --- SECTION 2: THE MINDHAVEN WAY (SPLIT) --- */}
+        {/* --- SECTION 2: THE Mindpurewellness WAY (SPLIT) --- */}
         <section className="section-padding reveal">
           <div className="container">
             <div className="row align-items-center g-5">

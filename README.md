@@ -1,6 +1,6 @@
-# MindHaven Wellness
+# MindPureWellness
 
-MindHaven Wellness is a professional mental health and wellness website built with **Next.js (Pages Router)**, **Bootstrap 5**, and custom CSS. It features a clean, calming UI designed to provide a supportive experience for individuals seeking mental health services.
+MindPureWellness is a professional mental health and wellness website built with **Next.js (Pages Router)**, **Bootstrap 5**, and custom CSS. It features a clean, calming UI designed to provide a supportive experience for individuals seeking mental health services.
 
 ## Features
 - **Modern & Clean UI**: Calming color palette (light blue, soft white).

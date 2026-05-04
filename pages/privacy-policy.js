@@ -6,10 +6,10 @@ export default function PrivacyPolicy() {
     <PolicyPageShell
       pageTitle="Privacy Policy"
       kicker="Legal"
-      metaDescription="Learn how MindHaven Wellness collects, uses, and protects your information."
+      metaDescription="Learn how MindPureWellness collects, uses, and protects your information."
     >
       <p>
-        MindHaven Wellness (&ldquo;MindHaven,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+        MindPureWellness (&ldquo;MindPureWellness,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
         &ldquo;our&rdquo;) is committed to protecting your privacy. This policy describes how we
         handle information when you use our website, contact us, or engage with our services.
       </p>
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
       <h2>Contact us</h2>
       <p>
         If you have questions about this policy or our privacy practices, contact us at{' '}
-        <a href="mailto:admissions@mindhaven.com">admissions@mindhaven.com</a> or through our{' '}
+        <a href="mailto:admissions@mindpurewellness.com"> admissions@mindpurewellness.com</a> or through our{' '}
         <Link href="/contact">Contact</Link> page.
       </p>
     </PolicyPageShell>

@@ -1,4 +1,4 @@
-// MindHaven Wellness - Premium Navbar (Updated Visibility & Fonts)
+// MindPureWellness - Premium Navbar (Updated Visibility & Fonts)
 import Link from 'next/link';
 import Image from "next/image";
 import { useState, useEffect, useLayoutEffect } from 'react';

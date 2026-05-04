@@ -33,7 +33,7 @@ export default function PsychoticDisorders() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Psychotic Disorders | MindHaven Wellness - Advanced Clinical Management</title>
+        <title>Psychotic Disorders | MindPureWellness - Advanced Clinical Management</title>
         <meta name="description" content="Specialized, private psychiatric care for complex psychotic disorders. Compassionate clinical management in a secure boutique environment." />
       </Head>
 

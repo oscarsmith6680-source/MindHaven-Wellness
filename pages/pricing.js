@@ -27,7 +27,7 @@ export default function Pricing() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Pricing Plans | MindHaven Wellness</title>
+        <title>Pricing Plans | MindPureWellness</title>
         <meta name="description" content="Transparent investment plans for your mental well-being." />
       </Head>
 

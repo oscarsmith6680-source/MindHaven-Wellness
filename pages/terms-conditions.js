@@ -6,10 +6,10 @@ export default function TermsConditions() {
     <PolicyPageShell
       pageTitle="Terms & Conditions"
       kicker="Legal"
-      metaDescription="Terms of use for the MindHaven Wellness website and related services."
+      metaDescription="Terms of use for the MindPureWellness website and related services."
     >
       <p>
-        These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your use of the MindHaven
+        These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your use of the MindPureWellness
         Wellness website and related online communications. By accessing or using our
         site, you agree to these Terms. If you do not agree, please do not use the site.
       </p>
@@ -38,14 +38,14 @@ export default function TermsConditions() {
       <h2>Intellectual property</h2>
       <p>
         All text, graphics, logos, images, and other materials on this site are owned by
-        MindHaven Wellness or our licensors and are protected by copyright and other laws.
+        MindPureWellness or our licensors and are protected by copyright and other laws.
         You may not copy, modify, or distribute this content for commercial use without our
         prior written permission, except for limited personal, non-commercial viewing.
       </p>
 
       <h2>Limitation of liability</h2>
       <p>
-        To the fullest extent permitted by law, MindHaven Wellness and its team members
+        To the fullest extent permitted by law, MindPureWellness and its team members
         shall not be liable for any indirect, incidental, special, consequential, or
         punitive damages arising from your use of the website or any linked third-party
         sites. Our total liability for any claim related to the site is limited to the
@@ -92,7 +92,7 @@ export default function TermsConditions() {
       <h2>Contact</h2>
       <p>
         Questions about these Terms? Contact us via our <Link href="/contact">Contact</Link>{' '}
-        page or at <a href="mailto:admissions@mindhaven.com">admissions@mindhaven.com</a>.
+        page or at <a href="mailto:admissions@MindPureWellness.com">MindPureWellness</a>.
       </p>
     </PolicyPageShell>
   );

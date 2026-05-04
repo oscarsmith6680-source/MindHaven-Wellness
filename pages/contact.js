@@ -117,8 +117,8 @@ export default function Contact() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Contact Us | MindHaven Wellness - Private Consultations</title>
-        <meta name="description" content="Reach out to MindHaven Wellness for private consultations and elite mental health care." />
+        <title>Contact Us | MindPureWellness - Private Consultations</title>
+        <meta name="description" content="Reach out to MindPureWellness for private consultations and elite mental health care." />
       </Head>
 
       <Navbar darkLinks={true} />
@@ -188,7 +188,7 @@ export default function Contact() {
                       </div>
                       <h5 className="fw-bold mb-3 position-relative z-1" style={{ color: 'var(--secondary-color)', fontSize: '20px' }}>Confidential Admissions</h5>
                       <p className="text-muted small lh-lg mb-0 position-relative z-1">
-                        admissions@mindhaven.com<br />
+                        admissions@puremindwellness.com<br />
                         +1 (800) 555-ELITE<br />
                         <span className="text-primary fw-bold extra-small tracking-widest mt-3 d-inline-block">24/7 PRIORITY LINE <i className="bi bi-dot ms-1 text-success"></i></span>
                       </p>

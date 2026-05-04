@@ -1,4 +1,4 @@
-// MindHaven Wellness - Premium ServiceCard Component
+// MindPureWellness - Premium ServiceCard Component
 const ServiceCard = ({ image, title, description, icon }) => {
   return (
     <div className="col-lg-4 col-md-6 mb-4">

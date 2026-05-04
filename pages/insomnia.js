@@ -33,7 +33,7 @@ export default function InsomniaTherapy() {
   return (
     <div className="premium-page">
       <Head>
-        <title>Insomnia Therapy | MindHaven Wellness - Restorative Sleep Medicine</title>
+        <title>Insomnia Therapy | MindPureWellness - Restorative Sleep Medicine</title>
         <meta name="description" content="Specialized clinical therapy for insomnia and sleep disorders. Restore your vitality through advanced neuro-informed sleep science." />
       </Head>
 
